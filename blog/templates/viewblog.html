@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+{% block content %}
+<br>
+<br>
+
+<!--<div class="container">-->
+  <div class="row">
+    {% for result in results %}
+    <div class="col-lg-4">
+
+  <div class="card" >
+    <img class="card-img-top" src="{{result.img.url}}" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">{{result.title}}</h4>
+      <p class="card-text">{{result.desc}}</p>
+      <a href="{% url 'update' result.id %}" class="btn btn-primary">Update</a>
+        <a href="{% url 'delete' result.id %}" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+
+    </div>
+    {% endfor %}
+  </div>
+<!--</div>-->
+<br>
+<br>
+
+
+{% endblock %}
